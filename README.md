@@ -1,0 +1,1 @@
+# @msg-labs/npm-bump
