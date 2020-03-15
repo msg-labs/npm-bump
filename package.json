@@ -1,0 +1,52 @@
+{
+    "name": "@msg-labs/npm-bump",
+    "version": "1.0.0",
+    "description": "Bumps dependencies to the latest version",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest",
+        "lint": "eslint \"**/*.js\" \"*.js\"",
+        "release": "standard-version"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/msg-labs/npm-bump.git"
+    },
+    "keywords": [
+        "cli",
+        "update",
+        "dependencies",
+        "automatic"
+    ],
+    "author": {
+        "name": "Miguel Sanchez Gonzalez",
+        "email": "miguelsanychez@gmail.com",
+        "url": "https://miguelsanchezgonzalez.com"
+    },
+    "license": "WTFNMFPL-1.0",
+    "bugs": {
+        "url": "https://github.com/msg-labs/npm-bump/issues"
+    },
+    "homepage": "https://github.com/msg-labs/npm-bump#readme",
+    "bin": {
+        "msg-npm-bump": "./index.js"
+    },
+    "devDependencies": {
+        "@msg-labs/eslint-config": "1.6.2",
+        "eslint": "6.8.0",
+        "husky": "4.2.3",
+        "jest": "25.1.0",
+        "lint-staged": "10.0.8",
+        "standard-version": "7.1.0"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run test && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run lint -- --fix"
+        ]
+    }
+}
